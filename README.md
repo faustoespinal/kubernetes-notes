@@ -19,6 +19,12 @@ The kubernetes install creates a virtual private network which is not accesible 
       ...
 ```
 
+### .bash_profile to Setup kubectl
+```
+export KUBECONFIG="${KUBECONFIG}:{COREOS_KUBERNETES_HOME}/coreos-kubernetes/multi-node/vagrant/kubeconfig"
+kubectl config use-context vagrant-multi
+```
+
 ## Run Kubernetes Web GUI
 The web GUI comes configured and ready to go by default with the coreos-vagrant install but it must be executed using kubectl. By default it will only accept connections from internal hosts, in order to allow connections from anywhere additional parameters must be provided. A shell script to accomplish this looks like:
 
