@@ -9,11 +9,13 @@ Notes on Installing and setting up Kubernetes on vagrant or openstack based syst
 The kubernetes install creates a virtual private network which is not accesible from outside the host machine.  Vagrant allows for attaching a box to a public network with static IP configuration.  In the main Vagrantfile under **coreos-kubernetes/multi-node/vagrant/Vagrantfile** add:
 
 ```
-...
+      ...
+      
       controllerIP = controllerIP(i)
       controller.vm.network :private_network, ip: controllerIP
       controller.vm.network :public_network, ip: "192.168.2.245"
-...
+      
+      ...
 ```
 
 ## Run Kubernetes Web GUI
@@ -53,8 +55,7 @@ curl -i {IP Address of any cluster Node}:{Port # of service}
 curl -i {IP Address of any cluster Node}:{Port # of service} -H 'Host: foo.bar'
 ```
 
-
-haproxy.yaml
+### haproxy.yaml
 ```
 apiVersion: extensions/v1beta1
 kind: Deployment
@@ -97,8 +98,7 @@ spec:
               fieldPath: metadata.namespace
 ```
 
-
-simple-web-app.yaml
+### simple-web-app.yaml
 ```
 apiVersion: extensions/v1beta1
 kind: Ingress
