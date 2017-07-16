@@ -1,4 +1,5 @@
-# kubernetes-notes
+# Kubernetes Notes
+
 Notes on Installing and setting up Kubernetes on vagrant or openstack based systems using coreos as base operating system for worker and master nodes.  These instructions were tried out using a VirtualBox setup and a configured vagrant virtualbox provider.
 
 ## Main Links for Setup
